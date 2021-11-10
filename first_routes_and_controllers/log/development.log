@@ -127,3 +127,129 @@ Processing by UsersController#show as */*
 Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/users?users[name]=Chloe%20O%27Brien&users[about][location]=New%20York" for ::1 at 2021-11-10 15:08:46 -0500
+Processing by UsersController#index as */*
+  Parameters: {"users"=>{"name"=>"Chloe O'Brien", "about"=>{"location"=>"New York"}}}
+  Rendering text template
+  Rendered text template (0.1ms)
+Completed 200 OK in 13ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users?users[name]=Chloe%20O%27Brien&users[about][location]=New%20York&food=pizza" for ::1 at 2021-11-10 15:09:37 -0500
+Processing by UsersController#index as */*
+  Parameters: {"users"=>{"name"=>"Chloe O'Brien", "about"=>{"location"=>"New York"}}, "food"=>"pizza"}
+  Rendering text template
+  Rendered text template (0.1ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2021-11-10 15:12:15 -0500
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"Kchloe Ko'brien"}, "food"=>"pizza"}
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (21.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (15.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2711202859307440470)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20211110201540)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (27.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying NOT NULL, "email" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20211110201540_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20211110201540"]]
+  ↳ bin/rails:9
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-11-10 20:17:49.224887"], ["updated_at", "2021-11-10 20:17:49.224887"]]
+  ↳ bin/rails:9
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(2711202859307440470)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Chaya Cohen"], ["email", "chaya@gmail.com"], ["created_at", "2021-11-10 20:19:43.395257"], ["updated_at", "2021-11-10 20:19:43.395257"]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Sam Gelernter"], ["email", "sam@gmail.com"], ["created_at", "2021-11-10 20:19:52.145878"], ["updated_at", "2021-11-10 20:19:52.145878"]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Ruby Rails"], ["email", "rubyon@rails.com"], ["created_at", "2021-11-10 20:21:54.229948"], ["updated_at", "2021-11-10 20:21:54.229948"]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Postman"], ["email", "deliveries@postmen.com"], ["created_at", "2021-11-10 20:22:29.660293"], ["updated_at", "2021-11-10 20:22:29.660293"]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/users" for ::1 at 2021-11-10 15:24:19 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/sam/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4
+Completed 200 OK in 194ms (Views: 12.4ms | ActiveRecord: 7.2ms)
+
+
+Started POST "/users?name=Harrison%20Ford&email=notthatharrisonford@gmail.com" for ::1 at 2021-11-10 15:28:09 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/sam/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Harrison Ford", "email"=>"notthatharrisonford@gmail.com"}
+Completed 400 Bad Request in 258ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/users_controller.rb:8:in `create'
+
+Started POST "/users?user[name]=Harrison%20Ford&user[email]=notthatharrisonford@gmail.com" for ::1 at 2021-11-10 15:29:20 -0500
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"Harrison Ford", "email"=>"notthatharrisonford@gmail.com"}}
+Unpermitted parameter: :email
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 422 Unprocessable Entity in 507ms (ActiveRecord: 6.7ms)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: Email can't be blank:
+  app/controllers/users_controller.rb:9:in `create'
+
+Started POST "/users?user[name]=Harrison%20Ford&user[email]=notthatharrisonford@gmail.com" for ::1 at 2021-11-10 15:30:25 -0500
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/sam/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"Harrison Ford", "email"=>"notthatharrisonford@gmail.com"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Harrison Ford"], ["email", "notthatharrisonford@gmail.com"], ["created_at", "2021-11-10 20:30:26.253337"], ["updated_at", "2021-11-10 20:30:26.253337"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 200 OK in 231ms (Views: 0.8ms | ActiveRecord: 14.3ms)
+
+
+Started POST "/users" for ::1 at 2021-11-10 15:31:18 -0500
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"David Davidson", "email"=>"yesthatdaviddavidson@gmail.com"}}
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "David Davidson"], ["email", "yesthatdaviddavidson@gmail.com"], ["created_at", "2021-11-10 20:31:18.590208"], ["updated_at", "2021-11-10 20:31:18.590208"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (8.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 200 OK in 20ms (Views: 0.6ms | ActiveRecord: 9.4ms)
+
+
