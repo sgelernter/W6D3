@@ -2,7 +2,7 @@ class Artwork < ApplicationRecord
     
     validates :title, :image_url, :artist_id, presence: true 
     validates :title, uniqueness: {scope: :artist_id, 
-        message: "This artist already has an artwork by that name."}     
+        message: "by that name already created by this artist."}     
    
     belongs_to :artist, 
         class_name: :User, 
