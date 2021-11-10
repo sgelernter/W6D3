@@ -82,3 +82,48 @@ Processing by UsersController#index as */*
 Completed 200 OK in 14ms (Views: 6.8ms | ActiveRecord: 0.0ms)
 
 
+  [1m[35m (160.6ms)[0m  [1m[35mCREATE DATABASE "first_routes_and_controllers_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (55.1ms)[0m  [1m[35mCREATE DATABASE "first_routes_and_controllers_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+Started GET "/users/:id" for ::1 at 2021-11-10 14:49:58 -0500
+
+SyntaxError - syntax error, unexpected keyword_end, expecting end-of-input:
+  app/controllers/users_controller.rb:7:in `'
+
+Started GET "/users/:id" for ::1 at 2021-11-10 14:50:40 -0500
+
+AbstractController::ActionNotFound - The action 'show' could not be found for UsersController:
+
+Started GET "/users?admin=true" for ::1 at 2021-11-10 14:51:14 -0500
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"chloe_obrian", "password"=>"[FILTERED]"}, "admin"=>"true"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 7ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users?admin=true" for ::1 at 2021-11-10 14:52:55 -0500
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"chloe_obrian", "password"=>"[FILTERED]"}, "admin"=>"true"}
+  Rendering text template
+  Rendered text template (0.2ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2021-11-10 14:55:50 -0500
+
+AbstractController::ActionNotFound - The action 'create' could not be found for UsersController:
+
+Started POST "/users" for ::1 at 2021-11-10 14:57:43 -0500
+Processing by UsersController#create as */*
+  Parameters: {"admin"=>"true ", "name "=>"chloe obrien "}
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/2" for ::1 at 2021-11-10 15:01:11 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
