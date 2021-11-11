@@ -1,7 +1,11 @@
 class ArtworksController < ApplicationController
 
     def index
-        render json: Artwork.all
+         user = User.find(params[:user_id])
+         owned_by = user.artworks.as_json
+         shared_with = user.shared_with_me.as_json
+         output = "ARTIST'S WORK #{owned_by} SHARED WITH ARTIST #{shared_with}"
+         render json: output
     end
 
     def create 
