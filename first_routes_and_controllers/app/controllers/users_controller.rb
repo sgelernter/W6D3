@@ -34,6 +34,20 @@ class UsersController < ApplicationController
         User.destroy(params[:id])
     end 
 
+    def favorite 
+        #artwork_id, ownership_tag(artwork/share)
+        user = User.find(params[:id])
+        if params[:ownership] 
+            art = Artwork.find(params[:artwork_id])
+        else
+            art = ArtworkShares.find(params[:artwork_id])
+        end 
+
+        art.favorite ? art.update!(favorite: false) : art.update!(favorite: true)
+        render json: art
+        # Artwork.joins(:shares).where('artworks.favorite = true OR artwork_shares.favorite = true').as_json
+    end 
+
     private 
 
     def user_params 

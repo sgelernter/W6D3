@@ -8,8 +8,11 @@ Rails.application.routes.draw do
   resources :comments, only: [:create, :destroy, :index]
 
   resources :users do 
-    resources :artworks, only: [:index]
+    resources :artworks, only: [:index, :update]
     resources :comments, only: [:index]
+    member do 
+      patch 'favorite'
+    end 
   end
 
   resources :artworks do 
