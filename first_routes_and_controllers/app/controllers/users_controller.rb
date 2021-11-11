@@ -1,7 +1,13 @@
 class UsersController < ApplicationController 
 
     def index
-        render json: User.all
+        if params.keys.length == 3 
+            search = params.values.select{ |value| value != "users" && value != "index"}
+            search_term = "%#{search.first}%"
+            render json: User.where("UPPER(username) LIKE UPPER('#{search_term}')")
+        else 
+            render json: User.all
+        end 
     end
 
     def create 

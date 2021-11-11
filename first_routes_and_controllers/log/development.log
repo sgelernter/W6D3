@@ -2200,3 +2200,292 @@ Processing by CommentsController#index as */*
 Completed 200 OK in 687ms (Views: 0.7ms | ActiveRecord: 16.5ms)
 
 
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE DATABASE "first_routes_and_controllers_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE DATABASE "first_routes_and_controllers_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (6.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2711202859307440470)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateComments (20211111165402)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (21.4ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "user_id" integer NOT NULL, "artwork_id" integer NOT NULL, "body" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20211111165402_create_comments.rb:3
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_user_id" ON "comments"  ("user_id")[0m
+  ↳ db/migrate/20211111165402_create_comments.rb:9
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_artwork_id" ON "comments"  ("artwork_id")[0m
+  ↳ db/migrate/20211111165402_create_comments.rb:10
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20211111165402"]]
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2711202859307440470)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/users?test%20=test" for ::1 at 2021-11-11 13:56:47 -0500
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/chayamushkacohen/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as */*
+  Parameters: {"test "=>"test"}
+Started GET "/users" for ::1 at 2021-11-11 14:13:24 -0500
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/chayamushkacohen/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as */*
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8
+Completed 200 OK in 32ms (Views: 5.4ms | ActiveRecord: 17.4ms)
+
+
+Started GET "/users?username%20=monet" for ::1 at 2021-11-11 14:13:47 -0500
+Processing by UsersController#index as */*
+  Parameters: {"username "=>"monet"}
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username LIKE '%#{search}%')[0m
+  ↳ app/controllers/users_controller.rb:6
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/users?username%20=Monet" for ::1 at 2021-11-11 14:13:56 -0500
+Processing by UsersController#index as */*
+  Parameters: {"username "=>"Monet"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username LIKE '%#{search}%')[0m
+  ↳ app/controllers/users_controller.rb:6
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users?username%20=Monet" for ::1 at 2021-11-11 14:15:26 -0500
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/chayamushkacohen/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as */*
+  Parameters: {"username "=>"Monet"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username LIKE 'Monet')[0m
+  ↳ app/controllers/users_controller.rb:6
+Completed 200 OK in 33ms (Views: 5.0ms | ActiveRecord: 14.5ms)
+
+
+Started GET "/users?username%20=money" for ::1 at 2021-11-11 14:15:33 -0500
+Processing by UsersController#index as */*
+  Parameters: {"username "=>"money"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username LIKE 'money')[0m
+  ↳ app/controllers/users_controller.rb:6
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users?username%20=monet" for ::1 at 2021-11-11 14:15:41 -0500
+Processing by UsersController#index as */*
+  Parameters: {"username "=>"monet"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username LIKE 'monet')[0m
+  ↳ app/controllers/users_controller.rb:6
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users?username%20=onet" for ::1 at 2021-11-11 14:15:52 -0500
+Processing by UsersController#index as */*
+  Parameters: {"username "=>"onet"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username LIKE 'onet')[0m
+  ↳ app/controllers/users_controller.rb:6
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users?username%20=monet" for ::1 at 2021-11-11 14:15:59 -0500
+Processing by UsersController#index as */*
+  Parameters: {"username "=>"monet"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username LIKE 'monet')[0m
+  ↳ app/controllers/users_controller.rb:6
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users?username%20=monet" for ::1 at 2021-11-11 14:17:31 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/chayamushkacohen/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as */*
+  Parameters: {"username "=>"monet"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username LIKE '%["monet"]%')[0m
+  ↳ app/controllers/users_controller.rb:6
+Completed 200 OK in 12ms (Views: 1.3ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/users?username%20=Monet" for ::1 at 2021-11-11 14:17:36 -0500
+Processing by UsersController#index as */*
+  Parameters: {"username "=>"Monet"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username LIKE '%["Monet"]%')[0m
+  ↳ app/controllers/users_controller.rb:6
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users?username%20=Monet" for ::1 at 2021-11-11 14:17:42 -0500
+Processing by UsersController#index as */*
+  Parameters: {"username "=>"Monet"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username LIKE '%["Monet"]%')[0m
+  ↳ app/controllers/users_controller.rb:6
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users?username%20=Monet" for ::1 at 2021-11-11 14:19:58 -0500
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/chayamushkacohen/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as */*
+  Parameters: {"username "=>"Monet"}
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username LIKE %["Monet"]%)[0m
+  ↳ app/controllers/users_controller.rb:7
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 4.2ms)
+
+
+
+ActiveRecord::StatementInvalid - PG::SyntaxError: ERROR:  syntax error at or near "%"
+LINE 1: ...ELECT "users".* FROM "users" WHERE (username LIKE %["Monet"]...
+                                                             ^
+: SELECT "users".* FROM "users" WHERE (username LIKE %["Monet"]%):
+  app/controllers/users_controller.rb:7:in `index'
+
+Started GET "/users?username%20=Monet" for ::1 at 2021-11-11 14:20:29 -0500
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/chayamushkacohen/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as */*
+  Parameters: {"username "=>"Monet"}
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username LIKE %Monet%)[0m
+  ↳ app/controllers/users_controller.rb:7
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 3.9ms)
+
+
+
+ActiveRecord::StatementInvalid - PG::SyntaxError: ERROR:  syntax error at or near "%"
+LINE 1: SELECT "users".* FROM "users" WHERE (username LIKE %Monet%)
+                                                           ^
+: SELECT "users".* FROM "users" WHERE (username LIKE %Monet%):
+  app/controllers/users_controller.rb:7:in `index'
+
+Started GET "/users?username%20=Monet" for ::1 at 2021-11-11 14:20:55 -0500
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/chayamushkacohen/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as */*
+  Parameters: {"username "=>"Monet"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username LIKE '%Monet%')[0m
+  ↳ app/controllers/users_controller.rb:7
+Completed 200 OK in 23ms (Views: 3.7ms | ActiveRecord: 11.7ms)
+
+
+Started GET "/users?username%20=monet" for ::1 at 2021-11-11 14:21:05 -0500
+Processing by UsersController#index as */*
+  Parameters: {"username "=>"monet"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username LIKE '%monet%')[0m
+  ↳ app/controllers/users_controller.rb:7
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users?username%20=onet" for ::1 at 2021-11-11 14:21:10 -0500
+Processing by UsersController#index as */*
+  Parameters: {"username "=>"onet"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username LIKE '%onet%')[0m
+  ↳ app/controllers/users_controller.rb:7
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users?username%20=one" for ::1 at 2021-11-11 14:21:18 -0500
+Processing by UsersController#index as */*
+  Parameters: {"username "=>"one"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username LIKE '%one%')[0m
+  ↳ app/controllers/users_controller.rb:7
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users?username%20=one" for ::1 at 2021-11-11 14:21:37 -0500
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/chayamushkacohen/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as */*
+  Parameters: {"username "=>"one"}
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username SIMILAR '%one%')[0m
+  ↳ app/controllers/users_controller.rb:7
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 4.5ms)
+
+
+
+ActiveRecord::StatementInvalid - PG::SyntaxError: ERROR:  syntax error at or near "'%one%'"
+LINE 1: ...LECT "users".* FROM "users" WHERE (username SIMILAR '%one%')
+                                                               ^
+: SELECT "users".* FROM "users" WHERE (username SIMILAR '%one%'):
+  app/controllers/users_controller.rb:7:in `index'
+
+Started GET "/users?username%20=monet" for ::1 at 2021-11-11 14:21:59 -0500
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/chayamushkacohen/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as */*
+  Parameters: {"username "=>"monet"}
+  [1m[36mUser Load (11.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username SIMILAR TO '%monet%')[0m
+  ↳ app/controllers/users_controller.rb:7
+Completed 200 OK in 22ms (Views: 1.1ms | ActiveRecord: 14.3ms)
+
+
+Started GET "/users?username%20=one" for ::1 at 2021-11-11 14:22:03 -0500
+Processing by UsersController#index as */*
+  Parameters: {"username "=>"one"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username SIMILAR TO '%one%')[0m
+  ↳ app/controllers/users_controller.rb:7
+Completed 200 OK in 19ms (Views: 9.1ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/users?username%20=monet" for ::1 at 2021-11-11 14:22:10 -0500
+Processing by UsersController#index as */*
+  Parameters: {"username "=>"monet"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username SIMILAR TO '%monet%')[0m
+  ↳ app/controllers/users_controller.rb:7
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users?username%20=monet" for ::1 at 2021-11-11 14:24:30 -0500
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/chayamushkacohen/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as */*
+  Parameters: {"username "=>"monet"}
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (UPPER(username) LIKE UPPER('%monet%'))[0m
+  ↳ app/controllers/users_controller.rb:7
+Completed 200 OK in 33ms (Views: 3.5ms | ActiveRecord: 23.1ms)
+
+
+Started GET "/users?username%20=one" for ::1 at 2021-11-11 14:24:38 -0500
+Processing by UsersController#index as */*
+  Parameters: {"username "=>"one"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (UPPER(username) LIKE UPPER('%one%'))[0m
+  ↳ app/controllers/users_controller.rb:7
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users?username%20=Keef" for ::1 at 2021-11-11 14:24:56 -0500
+Processing by UsersController#index as */*
+  Parameters: {"username "=>"Keef"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (UPPER(username) LIKE UPPER('%Keef%'))[0m
+  ↳ app/controllers/users_controller.rb:7
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users?username%20=kee" for ::1 at 2021-11-11 14:25:01 -0500
+Processing by UsersController#index as */*
+  Parameters: {"username "=>"kee"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (UPPER(username) LIKE UPPER('%kee%'))[0m
+  ↳ app/controllers/users_controller.rb:7
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users" for ::1 at 2021-11-11 14:25:11 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users?username%20=Okeef&username%20=picasso" for ::1 at 2021-11-11 14:25:32 -0500
+Processing by UsersController#index as */*
+  Parameters: {"username "=>"picasso"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (UPPER(username) LIKE UPPER('%picasso%'))[0m
+  ↳ app/controllers/users_controller.rb:7
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.6ms)
+
+
