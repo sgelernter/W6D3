@@ -22,6 +22,14 @@ art_3 = Artwork.create!(title: 'Something with Flowers', image_url: 'notme.biz',
 art_4 = Artwork.create!(title: 'These are cool shapes', image_url: 'whatever2.thesequel', artist_id: user_4.id)
 art_5 = Artwork.create!(title: 'Dead Shark', image_url: 'deadshark.com', artist_id: user_5.id)
 
+comment_1 = Comment.create!(user_id: user_1.id, artwork_id: art_2.id, body: "Brilliant!")
+comment_1 = Comment.create!(user_id: user_2.id, artwork_id: art_1.id, body: "Whatever!")
+comment_1 = Comment.create!(user_id: user_3.id, artwork_id: art_3.id, body: "First.")
+comment_1 = Comment.create!(user_id: user_5.id, artwork_id: art_3.id, body: "Also brilliant!")
+comment_1 = Comment.create!(user_id: user_1.id, artwork_id: art_5.id, body: "Learn to paint.")
+
+
+
 ArtworkShare.create!(viewer_id: user_1.id, artwork_id: art_3.id)
 ArtworkShare.create!(viewer_id: user_1.id, artwork_id: art_4.id)
 ArtworkShare.create!(viewer_id: user_2.id, artwork_id: art_2.id)
