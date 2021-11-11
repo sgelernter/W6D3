@@ -6,12 +6,14 @@ Rails.application.routes.draw do
   resources :artworks, only: [:show, :update, :destroy, :create]
   resources :artwork_shares, only: [:create, :destroy]
   resources :comments, only: [:create, :destroy, :index]
+  resources :collections, only: [:index]
 
   resources :users do 
     resources :artworks, only: [:index, :update]
     resources :comments, only: [:index]
     member do 
       patch 'favorite'
+      get 'list_collection'
     end 
   end
 

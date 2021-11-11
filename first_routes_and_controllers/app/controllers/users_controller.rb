@@ -48,6 +48,13 @@ class UsersController < ApplicationController
         # Artwork.joins(:shares).where('artworks.favorite = true OR artwork_shares.favorite = true').as_json
     end 
 
+    def list_collection
+        # redirect_to controller: :collections, action: :index 
+        art_ids = Collection.where(name: params[:name], user_id: params[:id]).pluck(:artwork_id)
+        arts = Artwork.where('artworks.id IN (?)', art_ids)
+        render json: arts
+    end
+
     private 
 
     def user_params 

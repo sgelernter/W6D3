@@ -26,4 +26,9 @@ class Artwork < ApplicationRecord
 
     has_many :likes, as: :likeable
 
+    has_many :in_collections,
+        class_name: :Collection,
+        foreign_key: :artwork_id,
+        primary_key: :id 
+
 end 
